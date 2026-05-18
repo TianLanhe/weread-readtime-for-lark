@@ -1,0 +1,55 @@
+{
+  "readtime_fields": [
+    {
+      "name": "日期",
+      "type": "datetime"
+    },
+    {
+      "name": "当日阅读时长（秒）",
+      "type": "number",
+      "style": {
+        "type": "plain",
+        "precision": 0
+      }
+    },
+    {
+      "name": "当日阅读时长（分）",
+      "type": "number",
+      "style": {
+        "type": "plain",
+        "precision": 1
+      }
+    },
+    {
+      "name": "当日阅读时长（时）",
+      "type": "number",
+      "style": {
+        "type": "plain",
+        "precision": 2
+      }
+    }
+  ],
+  "readtime_view_sort": {
+    "sort_config": [
+      {
+        "field": "日期",
+        "desc": true
+      }
+    ]
+  },
+  "dashboard_blocks": [
+    {
+      "name": "阅读总时长（小时）",
+      "type": "statistics",
+      "data_config": {
+        "table_name": "阅读时长",
+        "series": [
+          {
+            "field_name": "当日阅读时长（时）",
+            "rollup": "SUM"
+          }
+        ]
+      }
+    }
+  ]
+}
